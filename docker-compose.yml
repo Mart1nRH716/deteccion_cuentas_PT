@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  ml_pipeline:
+    build: .
+    container_name: fraude_ml_pipeline
+    volumes:
+      - ./models:/app/models
+      - ./models_reports:/app/models_reports
+    command: python modeling.py
+    restart: "no"
